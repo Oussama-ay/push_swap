@@ -34,11 +34,11 @@ t_list	*ft_nodenew(int content);
 t_list	*ft_lstadd_back(t_list *lst, int content);
 void	ft_lstclear(t_list **lst);
 void	ft_printlst(t_list *lst);
-char	**ft_split(char const *s, char c);
 long	ft_atol(const char *nptr);
 int		is_sorted(t_list *lst);
 
 /* Split */
+char		**ft_split(char const *s, char c);
 int		free_split(char **result, int n);
 
 /* Check error */
