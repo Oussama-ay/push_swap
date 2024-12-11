@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 22:13:28 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/10 10:53:03 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/11 11:32:08 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,21 +42,22 @@ static int ft_sign(const char c)
 	return (c == '+' || c == '-');
 }
 
-int is_valid_integer(const char *str, long *val) 
+int is_valid_integer(const char *str, long *val)
 {
 	int	i;
 
-	*val = ft_atol(str);
-	if (*val == 0 && !ft_isdigit(str[0]))
-		return (0);
 	i = 0;
+	if (ft_sign(str[i]))
+		i++;
+	if (!ft_isdigit(str[i]))
+		return (0);
 	while (str[i])
 	{
-		if (ft_sign(str[i]))
-			if (str[i + 1] && ft_sign(str[i + 1]) && !ft_isdigit(str[i + 1]))
-				return (0);
+		if (!ft_isdigit(str[i]))
+			return (0);
 		i++;
 	}
+	*val = ft_atol(str);
 	if (*val > INT_MAX || *val < INT_MIN)
 		return (0);
 	return (1);

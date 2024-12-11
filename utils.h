@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/10 13:56:05 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/11 15:20:04 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,16 +36,18 @@ void	ft_lstclear(t_list **lst);
 void	ft_printlst(t_list *lst);
 long	ft_atol(const char *nptr);
 int		is_sorted(t_list *lst);
+void	sort_3(t_list **a);
+int		stack_size(t_list *head);
 
 /* Split */
-char		**ft_split(char const *s, char c);
+char	**ft_split(char const *s, char c);
 int		free_split(char **result, int n);
 
 /* Check error */
 int		has_duplicates(t_list *head);
 int		is_valid_integer(const char *str, long *val);
 
-/* Sorting operations */
+/* Sorting instractions */
 void	sa(t_list **a);
 void	sb(t_list **b);
 void	ss(t_list **a, t_list **b);

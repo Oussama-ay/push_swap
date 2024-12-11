@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:13 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/10 14:03:09 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/11 15:19:04 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,6 @@ long	ft_atol(const char *nptr)
 	i = 0;
 	if(!nptr)
 		return (0);
-	while ((nptr[i] >= 9 && nptr[i] <= 13) || nptr[i] == 32)
-		i++;
 	sig = 1;
 	if (nptr[i] == '-' || nptr[i] == '+')
 	{
@@ -46,4 +44,40 @@ int	is_sorted(t_list *lst)
 		lst = lst->next;
 	}
 	return (1);
+}
+
+void	sort_3(t_list **a)
+{
+	t_list	*max;
+	t_list	*i;
+
+	if (*a == NULL)
+		return;
+	max = *a;
+	i = (*a)->next;
+	while (i)
+	{
+		if (max->content < i->content)
+			max = i;
+		i = i->next;
+	}
+	if (max == *a)
+		ra (a);
+	else if ((*a)->next == max)
+		rra(a);
+	if ((*a)->content > (*a)->next->content)
+		sa(a);
+}
+
+int	stack_size(t_list *head)
+{
+	int		size;
+
+	size = 0;
+	while (head)
+	{
+		size++;
+		head = head->next;
+	}
+	return (size);
 }
