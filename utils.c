@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:13 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/11 15:19:04 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/13 12:07:27 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,22 @@ int	stack_size(t_list *head)
 		head = head->next;
 	}
 	return (size);
+}
+
+t_list	*find_max(t_list *lst)
+{
+	t_list	*max;
+	t_list	*i;
+
+	if (!lst)
+		return (NULL);
+	max = lst;
+	i = lst->next;
+	while (i)
+	{
+		if (i->content > max->content)
+			max = i;
+		i = i->next;
+	}
+	return (max);
 }

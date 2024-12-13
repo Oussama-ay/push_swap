@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/08 09:11:58 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/09 21:45:58 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/13 12:04:51 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,14 @@ static char	*_strdup(char	*s, char c)
 	return (word);
 }
 
-int	free_split(char **result, int n)
+int	free_split(char **result)
 {
 	int		i;
 
+	if (!result)
+		return (-1);
 	i = 0;
-	while (i < n)
+	while (result[i])
 	{
 		free(result[i]);
 		i++;
@@ -79,7 +81,7 @@ static int	filling(char const	*s, char **result, char c)
 		{
 			word = _strdup((char *)s, c);
 			if (!word)
-				return (free_split(result, i));
+				return (free_split(result));
 			result[i++] = word;
 			while (*s && *s != c)
 				s++;

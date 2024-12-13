@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 22:13:28 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/11 11:32:08 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/13 12:08:12 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,23 @@ int has_duplicates(t_list *head)
 	t_list	*i;
 	t_list	*j;
 
+	if (!head)
+		return (0);
 	i = head;
-    while (i->next != NULL) 
+	while (i->next != NULL) 
 	{
 		j = i->next;
-        while (j != NULL) 
+		while (j != NULL) 
 		{
-            if (i->content == j->content)
-                return (1);
+			if (i->content == j->content)
+				return (1);
 			j = j->next;
-        }
+		}
 		i = i->next;
-    }
-    return (0);
+	}
+	return (0);
 }
+
 
 static int ft_isdigit(int c)
 {
@@ -46,6 +49,8 @@ int is_valid_integer(const char *str, long *val)
 {
 	int	i;
 
+	if (!str || !*str)
+		return (0);
 	i = 0;
 	if (ft_sign(str[i]))
 		i++;

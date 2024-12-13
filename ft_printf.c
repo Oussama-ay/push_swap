@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/29 11:30:06 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/10 09:56:46 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/13 11:47:10 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	find_specifier(va_list arg, char const specifier)
 	if (specifier == 'd')
 		print_int(va_arg(arg, int));
 	else if (specifier == 's')
-		print_str(va_arg(arg, char *));
+		print_str(va_arg(arg, char *), 1);
 }
 
 void	ft_printf(const char *format, ...)
@@ -52,7 +52,7 @@ void	print_int(int n)
 
 	if (n == -2147483648)
 	{
-		print_str("-2147483648");
+		print_str("-2147483648", 1);
 		return ;
 	}
 	d = 1;
@@ -71,13 +71,13 @@ void	print_int(int n)
 	}
 }
 
-void	print_str(char *str)
+void	print_str(char *str, int fd)
 {
 	if (!str)
-		return (print_str("(null)"));
+		return (print_str("(null)", 1));
 	while (*str)
 	{
-		write (1, str, 1);
+		write (fd, str, 1);
 		str++;
 	}
 }

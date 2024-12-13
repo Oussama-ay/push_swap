@@ -6,14 +6,14 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 09:54:06 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/11 15:14:29 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/13 12:03:34 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "utils.h"
 
-int main(int ac, char const *av[])
+int	main(int ac, char const *av[])
 {
 	int		i;
 	int		j;
@@ -25,7 +25,7 @@ int main(int ac, char const *av[])
 	t = NULL;
 	a = NULL;
 	b = NULL;
-	if (ac > 1)
+	if (ac >= 1)
 	{
 		i = 1;
 		while (av[i])
@@ -35,17 +35,18 @@ int main(int ac, char const *av[])
 			while (t[j] && is_valid_integer(t[j], &val))
 				a = ft_lstadd_back((j++, a), val);
 			if (t[j])
-				return (ft_printf("Error\n"), free_split(t, j), ft_lstclear(&a), 1);
-			free_split(t, j);
+			{
+				ft_printf("test\n");
+				return (print_str("Error\n", 2), free_split(t)
+					, ft_lstclear(&a), 1);
+			}
+			free_split(t);
 			i++;
 		}
 		if (has_duplicates(a))
-			return (ft_printf("Error\n"), ft_lstclear(&a), 1);
+			return (print_str("Error\n", 2), ft_lstclear(&a), 1);
 	}
-	ft_printf("After sorting:\n");
-	ft_sort(&a, &b);
-	ft_printlst(a);
-	ft_lstclear(&a);
-	ft_lstclear(&b);
+	(ft_printf("After sorting:\n"), ft_sort(&a, &b), ft_printlst(a));
+	(ft_lstclear(&a), ft_lstclear(&b));
 	return (0);
 }
