@@ -6,13 +6,13 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/13 09:39:54 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/13 15:37:18 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static void	set_index(t_list *lst)
+void	set_index(t_list *lst)
 {
 	int		i;
 	int		median;
@@ -96,7 +96,7 @@ static t_list	*analyze_stack(t_list *a, t_list *b)
 	return (get_cheapest(a));
 }
 
-t_list	*setup_stacks(t_list *a, t_list *b)
+t_list	*setup_stack_a(t_list *a, t_list *b)
 {
 	set_index(a);
 	set_index(b);

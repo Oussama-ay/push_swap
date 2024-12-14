@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/13 12:11:45 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 09:43:36 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	ft_printlst(t_list *lst);
 long	ft_atol(const char *nptr);
 int		stack_size(t_list *head);
 t_list	*find_max(t_list *lst);
+t_list	*find_min(t_list *a);
 
 /* Split */
 char	**ft_split(char const *s, char c);
@@ -67,6 +68,8 @@ void	rrr(t_list **a, t_list **b);
 void	ft_sort(t_list **a, t_list **b);
 int		is_sorted(t_list *lst);
 void	sort_3(t_list **a);
-t_list	*setup_stacks(t_list *a, t_list *b);
+t_list	*setup_stack_a(t_list *a, t_list *b);
+void	setup_stack_b(t_list *a, t_list *b);
+void	set_index(t_list *lst);
 
 #endif
