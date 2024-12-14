@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 09:54:06 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/13 12:03:34 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 16:37:10 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int ac, char const *av[])
 				a = ft_lstadd_back((j++, a), val);
 			if (t[j])
 			{
-				ft_printf("test\n");
 				return (print_str("Error\n", 2), free_split(t)
 					, ft_lstclear(&a), 1);
 			}
@@ -46,7 +45,8 @@ int	main(int ac, char const *av[])
 		if (has_duplicates(a))
 			return (print_str("Error\n", 2), ft_lstclear(&a), 1);
 	}
-	(ft_printf("After sorting:\n"), ft_sort(&a, &b), ft_printlst(a));
+	ft_sort(&a, &b);
+	// (ft_printlst(a));
 	(ft_lstclear(&a), ft_lstclear(&b));
 	return (0);
 }

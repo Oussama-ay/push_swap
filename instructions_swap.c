@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:52:35 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/10 12:08:48 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 16:37:21 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	sb(t_list **b)
 
 void	ss(t_list **a, t_list **b)
 {
-	sa(a);
-	sb(b);
+	*a = swap(*a);
+	*b = swap(*b);
 	ft_printf("ss\n");
 }

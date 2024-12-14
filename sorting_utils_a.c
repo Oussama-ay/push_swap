@@ -1,16 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sorting_utils.c                                    :+:      :+:    :+:   */
+/*   sorting_utils_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/13 15:37:18 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 11:02:57 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+#include "ft_printf.h"
 
 void	set_index(t_list *lst)
 {
@@ -79,9 +80,11 @@ static t_list	*analyze_stack(t_list *a, t_list *b)
 {
 	int		size_a;
 	int		size_b;
+	t_list	*stack;
 
 	size_a = stack_size(a);
 	size_b = stack_size(b);
+	stack = a;
 	while (a)
 	{
 		a->instructions_Cost = a->index;
@@ -93,7 +96,7 @@ static t_list	*analyze_stack(t_list *a, t_list *b)
 			a->instructions_Cost += size_b - a->target->index;
 		a = a->next;
 	}
-	return (get_cheapest(a));
+	return (get_cheapest(stack));
 }
 
 t_list	*setup_stack_a(t_list *a, t_list *b)

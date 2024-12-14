@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:04:22 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/10 12:09:02 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 16:37:33 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	rrb(t_list **b)
 
 void	rrr(t_list **a, t_list **b) 
 {
-	rra(a);
-	rrb(b);
+	*a = reverse_rotate(*a);
+	*b = reverse_rotate(*b);
 	ft_printf("rrr\n");
 }

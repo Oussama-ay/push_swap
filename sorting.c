@@ -6,33 +6,31 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/14 09:48:15 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 16:36:20 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
+#include "ft_printf.h"
 
 static void	prepare_stack(t_list **stack, t_list *cheapest_node, char stack_name)
 {
-	if (stack_name == 'a')
+	while (*stack != cheapest_node)
 	{
-		while (*stack != cheapest_node)
+		if (stack_name == 'a')
 		{
 			if (cheapest_node->above_median)
 				ra(stack);
 			else
 				rra(stack);
 		}
-	}
-	else
-	{
-		while (*stack != cheapest_node)
+		else if (stack_name == 'b')
 		{
 			if (cheapest_node->above_median)
 				rb(stack);
 			else
 				rrb(stack);
-		}
+		}	
 	}
 }
 
@@ -41,16 +39,14 @@ static void	push_a_to_b(t_list **a, t_list **b, t_list *cheapest_node)
 	if (cheapest_node->above_median && cheapest_node->target->above_median)
 		while (*b != cheapest_node->target && *a != cheapest_node)
 			rr(a, b);
-	else if (!cheapest_node->above_median && !cheapest_node->target->above_median)
+	else if (!(cheapest_node->above_median) && !(cheapest_node->target->above_median))
 		while ((*a)->content != cheapest_node->content)
-			ra(a);
-	else if (cheapest_node->above_median && !cheapest_node->target->above_median)
-		while (*b != cheapest_node->target && *a != cheapest_node)
 			rrr(a, b);
 	set_index(*a);
-	set_index(*a);
+	set_index(*b);
 	prepare_stack(a, cheapest_node, 'a');
 	prepare_stack(b, cheapest_node->target, 'b');
+	pb(a, b);
 }
 
 static void	push_b_to_a(t_list **a, t_list **b)
@@ -72,6 +68,7 @@ static void	sort_n(t_list **a, t_list **b, int size)
 		cheapest_node = setup_stack_a(*a, *b);
 		push_a_to_b(a, b, cheapest_node);
 	}
+	// ft_printf("size = %d\n", stack_size(*a));
 	sort_3(a);
 	while (*b)
 	{
