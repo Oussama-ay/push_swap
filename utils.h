@@ -6,22 +6,22 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/14 09:43:36 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/15 13:44:00 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef UTILS_H
 # define UTILS_H
 
-#include <stdlib.h>
-#include <limits.h>
+# include <stdlib.h>
+# include <limits.h>
 
 /* Linked list */
 typedef struct s_list
 {
 	int				content;
 	int				index;
-	int				instructions_Cost;
+	int				instructions_cost;
 	int				above_median;
 	struct s_list	*target;
 	struct s_list	*next;

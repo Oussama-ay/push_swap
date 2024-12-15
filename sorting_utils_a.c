@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 09:53:39 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/15 13:44:28 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static void	find_target(t_list *a, t_list *b)
 		i = b;
 		while (i)
 		{
-			if (i->content < a->content 
+			if (i->content < a->content
 				&& i->content > target_value)
 			{
 				target = i;
@@ -69,7 +69,7 @@ static t_list	*get_cheapest(t_list *a)
 	cheapest = a;
 	while (a)
 	{
-		if (a->instructions_Cost < cheapest->instructions_Cost)
+		if (a->instructions_cost < cheapest->instructions_cost)
 			cheapest = a;
 		a = a->next;
 	}
@@ -87,13 +87,13 @@ static t_list	*analyze_stack(t_list *a, t_list *b)
 	stack = a;
 	while (a)
 	{
-		a->instructions_Cost = a->index;
+		a->instructions_cost = a->index;
 		if (!(a->above_median))
-			a->instructions_Cost = size_a - a->index;
+			a->instructions_cost = size_a - a->index;
 		if (a->target->above_median)
-			a->instructions_Cost += a->target->index;
+			a->instructions_cost += a->target->index;
 		else
-			a->instructions_Cost += size_b - a->target->index;
+			a->instructions_cost += size_b - a->target->index;
 		a = a->next;
 	}
 	return (get_cheapest(stack));

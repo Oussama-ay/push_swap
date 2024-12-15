@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:13 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/13 12:07:27 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/15 13:40:51 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 long	ft_atol(const char *nptr)
 {
-	int	i;
+	int		i;
 	long	result;
-	int	sig;
+	int		sig;
 
 	i = 0;
-	if(!nptr)
+	if (!nptr)
 		return (0);
 	sig = 1;
 	if (nptr[i] == '-' || nptr[i] == '+')
@@ -52,7 +52,7 @@ void	sort_3(t_list **a)
 	t_list	*i;
 
 	if (*a == NULL)
-		return;
+		return ;
 	max = *a;
 	i = (*a)->next;
 	while (i)
