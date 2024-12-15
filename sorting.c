@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/14 16:36:20 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/14 18:49:47 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	push_a_to_b(t_list **a, t_list **b, t_list *cheapest_node)
 		while (*b != cheapest_node->target && *a != cheapest_node)
 			rr(a, b);
 	else if (!(cheapest_node->above_median) && !(cheapest_node->target->above_median))
-		while ((*a)->content != cheapest_node->content)
+		while (*b != cheapest_node->target && *a != cheapest_node)
 			rrr(a, b);
 	set_index(*a);
 	set_index(*b);
@@ -68,7 +68,6 @@ static void	sort_n(t_list **a, t_list **b, int size)
 		cheapest_node = setup_stack_a(*a, *b);
 		push_a_to_b(a, b, cheapest_node);
 	}
-	// ft_printf("size = %d\n", stack_size(*a));
 	sort_3(a);
 	while (*b)
 	{
