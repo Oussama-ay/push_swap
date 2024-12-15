@@ -6,14 +6,14 @@
 #    By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/07 09:51:27 by oayyoub           #+#    #+#              #
-#    Updated: 2024/12/14 09:30:39 by oayyoub          ###   ########.fr        #
+#    Updated: 2024/12/15 14:10:28 by oayyoub          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror
 
-SRCS =	list_tools.c utils.c the_core.c ft_split.c operations.c check_error.c sorting.c ft_printf.c\
+SRCS =	list_tools.c utils.c push_swap.c ft_split.c operations.c check_error.c sorting.c ft_printf.c\
 		instructions_push.c instructions_rotate.c instructions_swap.c instructions_reverse_rotate.c\
 		sorting_utils_a.c sorting_utils_b.c 
 

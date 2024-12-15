@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 13:39:27 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/15 14:02:56 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,18 +59,14 @@ static void	push_b_to_a(t_list **a, t_list **b)
 
 static void	sort_n(t_list **a, t_list **b, int size)
 {
-	t_list	*cheapest_node;
-
 	if (size-- > 3)
 		pb(a, b);
 	if (size-- > 3 && !is_sorted(*a))
 		pb(a, b);
 	while (size-- > 3 && !is_sorted(*a))
-	{
-		cheapest_node = setup_stack_a(*a, *b);
-		push_a_to_b(a, b, cheapest_node);
-	}
-	sort_3(a);
+		push_a_to_b(a, b, setup_stack_a(*a, *b));
+	if (!is_sorted(*a))
+		sort_3(a);
 	while (*b)
 	{
 		setup_stack_b(*a, *b);
