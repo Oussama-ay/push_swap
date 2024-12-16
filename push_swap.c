@@ -1,16 +1,15 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   the_core.c                                         :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 09:54:06 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 13:32:26 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:23 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
 #include "utils.h"
 
 static void	_input(char **av, t_list **a)
@@ -24,6 +23,8 @@ static void	_input(char **av, t_list **a)
 	while (av[i])
 	{
 		t = ft_split(av[i], ' ');
+		if (!valid_string(t))
+			exit((print_str("Error\n", 2), free_split(t), ft_lstclear(a), 1));
 		j = 0;
 		while (t[j] && is_valid_integer(t[j], &val))
 			*a = ft_lstadd_back((j++, *a), val);

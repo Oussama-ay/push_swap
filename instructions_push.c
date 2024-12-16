@@ -6,12 +6,11 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 12:01:28 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/14 16:37:42 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:37 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "ft_printf.h"
 
 void	pa(t_list **a, t_list **b)
 {

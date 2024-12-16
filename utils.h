@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 13:44:00 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:42:22 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <stdlib.h>
 # include <limits.h>
+# include <unistd.h>
+# include <stdarg.h>
+# include "get_next_line_bonus.h"
+# include "ft_printf.h"
 
 /* Linked list */
 typedef struct s_list
@@ -50,6 +54,7 @@ int		free_split(char **result);
 /* Check error */
 int		has_duplicates(t_list *head);
 int		is_valid_integer(const char *str, long *val);
+int		valid_string(char **t);
 
 /* Sorting instractions */
 void	sa(t_list **a);

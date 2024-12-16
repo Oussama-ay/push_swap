@@ -6,12 +6,11 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 11:17:14 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/11 21:28:02 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:27 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "ft_printf.h"
 
 t_list	*ft_nodenew(int content)
 {

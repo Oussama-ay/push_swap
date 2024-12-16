@@ -6,12 +6,11 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/10 11:52:35 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/14 20:28:38 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:30 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "ft_printf.h"
 
 void	sa(t_list **a)
 {

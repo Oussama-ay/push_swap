@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/09 22:13:28 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 13:35:13 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:09:39 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,13 @@ int	is_valid_integer(const char *str, long *val)
 	}
 	*val = ft_atol(str);
 	if (*val > INT_MAX || *val < INT_MIN)
+		return (0);
+	return (1);
+}
+
+int	valid_string(char **t)
+{
+	if (!t || !t[0])
 		return (0);
 	return (1);
 }

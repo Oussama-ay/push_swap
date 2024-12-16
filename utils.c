@@ -6,12 +6,11 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:13 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 13:40:51 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:11 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "ft_printf.h"
 
 long	ft_atol(const char *nptr)
 {

@@ -6,12 +6,11 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 13:44:28 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:18 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "ft_printf.h"
 
 void	set_index(t_list *lst)
 {

@@ -6,12 +6,11 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/15 14:02:56 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 10:22:14 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
-#include "ft_printf.h"
 
 static void	prepare_stack(t_list **stack, t_list *cheapest_node
 							, char stack_name)
