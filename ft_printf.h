@@ -6,14 +6,12 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 12:45:22 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 10:21:06 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 14:21:32 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
-
-
 
 void	ft_printf(const char *format, ...);
 void	print_int(int n);

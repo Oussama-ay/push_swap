@@ -6,13 +6,13 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:14:01 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 14:08:40 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 14:19:28 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static int ft_strncmp(const char *s1, const char *s2, int n)
+static int	ft_strncmp(const char *s1, const char *s2, int n)
 {
 	int	i;
 
@@ -24,51 +24,51 @@ static int ft_strncmp(const char *s1, const char *s2, int n)
 	return (s1[i] - s2[i]);
 }
 
-static void execute_command(char *line, t_list **a, t_list **b)
+static void	execute_command(char *line, t_list **a, t_list **b)
 {
-    if (!ft_strncmp(line, "sa\n", 3))
-        *a = swap(*a);
-    else if (!ft_strncmp(line, "sb\n", 3))
-        *b = swap(*b);
-    else if (!ft_strncmp(line, "ss\n", 3))
-        (1) && (*a = swap(*a), *b = swap(*b));
-    else if (!ft_strncmp(line, "pa\n", 3))
-        push(a, b);
-    else if (!ft_strncmp(line, "pb\n", 3))
-        push(b, a);
-    else if (!ft_strncmp(line, "ra\n", 3))
-        *a = rotate(*a);
-    else if (!ft_strncmp(line, "rb\n", 3))
-        *b = rotate(*b);
-    else if (!ft_strncmp(line, "rr\n", 3))
-        (2) && (*a = rotate(*a), *b = rotate(*b));
-    else if (!ft_strncmp(line, "rra\n", 4))
-        *a = reverse_rotate(*a);
-    else if (!ft_strncmp(line, "rrb\n", 4))
-        *b = reverse_rotate(*b);
-    else if (!ft_strncmp(line, "rrr\n", 4))
-        (3) && (*a = reverse_rotate(*a), *b = reverse_rotate(*b));
-    else 
-        exit((free(line), print_str("Error\n", 2),
+	if (!ft_strncmp(line, "sa\n", 3))
+		*a = swap(*a);
+	else if (!ft_strncmp(line, "sb\n", 3))
+		*b = swap(*b);
+	else if (!ft_strncmp(line, "ss\n", 3))
+		(1) && (*a = swap(*a), *b = swap(*b));
+	else if (!ft_strncmp(line, "pa\n", 3))
+		push(a, b);
+	else if (!ft_strncmp(line, "pb\n", 3))
+		push(b, a);
+	else if (!ft_strncmp(line, "ra\n", 3))
+		*a = rotate(*a);
+	else if (!ft_strncmp(line, "rb\n", 3))
+		*b = rotate(*b);
+	else if (!ft_strncmp(line, "rr\n", 3))
+		(2) && (*a = rotate(*a), *b = rotate(*b));
+	else if (!ft_strncmp(line, "rra\n", 4))
+		*a = reverse_rotate(*a);
+	else if (!ft_strncmp(line, "rrb\n", 4))
+		*b = reverse_rotate(*b);
+	else if (!ft_strncmp(line, "rrr\n", 4))
+		(3) && (*a = reverse_rotate(*a), *b = reverse_rotate(*b));
+	else
+		exit((free(line), print_str("Error\n", 2),
 				ft_lstclear(a), ft_lstclear(b), 1));
 }
 
-static void checker(t_list **a, t_list **b)
+static void	checker(t_list **a, t_list **b)
 {
-    char *line;
+	char	*line;
 
-    line = get_next_line(0);
+	line = get_next_line(0);
 	while (line)
 	{
-        execute_command(line, a, b);
-        free(line);
-		line = get_next_line(0);
-    }
-	
-    if (is_sorted(*a) && !*b)
-        print_str("OK\n", 1);
-    else
-        print_str("KO\n", 1);
+		execute_command (line, a, b);
+		free (line);
+		line = get_next_line (0);
+	}
+	free (line);
+	if (is_sorted(*a) && !*b)
+		print_str ("OK\n", 1);
+	else
+		print_str ("KO\n", 1);
 }
 
 static void	_input(char **av, t_list **a)
@@ -109,4 +109,3 @@ int	main(int ac, char **av)
 	(ft_lstclear(&a), ft_lstclear(&b));
 	return (0);
 }
-
