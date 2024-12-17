@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 10:22:18 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 21:14:37 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,9 @@ static t_list	*analyze_stack(t_list *a, t_list *b)
 	stack = a;
 	while (a)
 	{
-		a->instructions_cost = a->index;
-		if (!(a->above_median))
+		if (a->above_median)
+			a->instructions_cost = a->index;
+		else
 			a->instructions_cost = size_a - a->index;
 		if (a->target->above_median)
 			a->instructions_cost += a->target->index;

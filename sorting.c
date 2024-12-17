@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 10:22:14 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/16 21:43:57 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	sort_n(t_list **a, t_list **b, int size)
 		pb(a, b);
 	while (size-- > 3 && !is_sorted(*a))
 		push_a_to_b(a, b, setup_stack_a(*a, *b));
-	if (!is_sorted(*a))
+	if (!is_sorted(*a) && stack_size(*a) == 3)
 		sort_3(a);
 	while (*b)
 	{
