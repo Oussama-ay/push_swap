@@ -6,13 +6,13 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/18 10:25:02 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 10:33:04 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-static void	prepare_stack(t_list **stack, t_list *cheapest_node
+static void	complete_rotation(t_list **stack, t_list *cheapest_node
 							, char stack_name)
 {
 	while (*stack != cheapest_node)
@@ -45,14 +45,14 @@ static void	push_a_to_b(t_list **a, t_list **b, t_list *cheapest_node)
 			rrr(a, b);
 	set_index(*a);
 	set_index(*b);
-	prepare_stack(a, cheapest_node, 'a');
-	prepare_stack(b, cheapest_node->target, 'b');
+	complete_rotation(a, cheapest_node, 'a');
+	complete_rotation(b, cheapest_node->target, 'b');
 	pb(a, b);
 }
 
 static void	push_b_to_a(t_list **a, t_list **b)
 {
-	prepare_stack(a, (*b)->target, 'a');
+	complete_rotation(a, (*b)->target, 'a');
 	pa(a, b);
 }
 
