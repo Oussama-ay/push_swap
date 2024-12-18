@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/13 15:40:12 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/14 09:45:47 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 10:59:23 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static void	find_target(t_list *a, t_list *b)
 
 void	setup_stack_b(t_list *a, t_list *b)
 {
-	set_index(a);
-	set_index(b);
+	mark_above_median(a);
+	mark_above_median(b);
 	find_target(a, b);
 }

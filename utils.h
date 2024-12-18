@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 10:42:22 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:40:25 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,6 @@ int		is_sorted(t_list *lst);
 void	sort_3(t_list **a);
 t_list	*setup_stack_a(t_list *a, t_list *b);
 void	setup_stack_b(t_list *a, t_list *b);
-void	set_index(t_list *lst);
+void	mark_above_median(t_list *lst);
 
 #endif

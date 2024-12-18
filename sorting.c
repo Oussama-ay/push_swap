@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:12:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/18 10:33:04 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 10:59:59 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,8 @@ static void	push_a_to_b(t_list **a, t_list **b, t_list *cheapest_node)
 		&& !(cheapest_node->target->above_median))
 		while (*b != cheapest_node->target && *a != cheapest_node)
 			rrr(a, b);
-	set_index(*a);
-	set_index(*b);
+	mark_above_median(*a);
+	mark_above_median(*b);
 	complete_rotation(a, cheapest_node, 'a');
 	complete_rotation(b, cheapest_node->target, 'b');
 	pb(a, b);
@@ -71,7 +71,7 @@ static void	sort_n(t_list **a, t_list **b, int size)
 		setup_stack_b(*a, *b);
 		push_b_to_a(a, b);
 	}
-	set_index(*a);
+	mark_above_median(*a);
 	while ((*a)->content != find_min(*a)->content)
 	{
 		if (find_min(*a)->above_median)

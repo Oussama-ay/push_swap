@@ -6,13 +6,13 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/12 16:39:45 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 21:14:37 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 13:41:04 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-void	set_index(t_list *lst)
+void	mark_above_median(t_list *lst)
 {
 	int		i;
 	int		median;
@@ -101,8 +101,8 @@ static t_list	*analyze_stack(t_list *a, t_list *b)
 
 t_list	*setup_stack_a(t_list *a, t_list *b)
 {
-	set_index(a);
-	set_index(b);
+	mark_above_median(a);
+	mark_above_median(b);
 	find_target(a, b);
 	return (analyze_stack(a, b));
 }
