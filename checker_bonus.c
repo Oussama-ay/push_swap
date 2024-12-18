@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/16 10:14:01 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 16:45:02 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 17:38:52 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,8 @@ int	main(int ac, char **av)
 	b = NULL;
 	if (ac >= 1)
 		_input(av, &a);
+	if (!a)
+		return (0);
 	checker(&a, &b);
 	(ft_lstclear(&a), ft_lstclear(&b));
 	return (0);
