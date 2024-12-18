@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/18 13:40:25 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 16:14:39 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ t_list	*rotate(t_list *head);
 t_list	*reverse_rotate(t_list *head);
 
 /* Utils */
-t_list	*ft_nodenew(int content);
 t_list	*ft_lstadd_back(t_list *lst, int content);
 void	ft_lstclear(t_list **lst);
 void	ft_printlst(t_list *lst);

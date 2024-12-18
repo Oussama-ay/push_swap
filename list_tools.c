@@ -6,13 +6,13 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 11:17:14 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/16 10:22:27 by oayyoub          ###   ########.fr       */
+/*   Updated: 2024/12/18 16:13:53 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "utils.h"
 
-t_list	*ft_nodenew(int content)
+static t_list	*ft_nodenew(int content)
 {
 	t_list	*new;
 
