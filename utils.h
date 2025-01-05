@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 10:05:03 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/18 16:14:39 by oayyoub          ###   ########.fr       */
+/*   Updated: 2025/01/05 15:26:29 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 # include <limits.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <math.h>
 # include "get_next_line_bonus.h"
 # include "ft_printf.h"
+# define MAX(a, b) a * (a >= b) + b * (b > a)
 
 /* Linked list */
 typedef struct s_list
@@ -27,6 +29,7 @@ typedef struct s_list
 	int				index;
 	int				instructions_cost;
 	int				above_median;
+	int				rank;
 	struct s_list	*target;
 	struct s_list	*next;
 }	t_list;
@@ -73,7 +76,7 @@ void	ft_sort(t_list **a, t_list **b);
 int		is_sorted(t_list *lst);
 void	sort_3(t_list **a);
 t_list	*setup_stack_a(t_list *a, t_list *b);
-void	setup_stack_b(t_list *a, t_list *b);
+t_list	*setup_stack_b(t_list *a, t_list *b);
 void	mark_above_median(t_list *lst);
 
 #endif

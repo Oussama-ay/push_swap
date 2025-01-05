@@ -6,7 +6,7 @@
 /*   By: oayyoub <oayyoub@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/07 11:17:14 by oayyoub           #+#    #+#             */
-/*   Updated: 2024/12/18 16:13:53 by oayyoub          ###   ########.fr       */
+/*   Updated: 2025/01/05 15:29:37 by oayyoub          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_printlst(t_list *lst)
 {
 	while (lst)
 	{
-		ft_printf("%d\n", lst->content);
+		ft_printf("data %d, instruction cost : %d, keep_in_stack : %d\n", lst->content, lst->instructions_cost);
 		lst = lst->next;
 	}
 }
