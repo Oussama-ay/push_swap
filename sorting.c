@@ -61,7 +61,7 @@ static void	set_rank(t_list *stack)
 static void push_a_to_b(t_list **a, t_list **b)
 {
 	set_rank(*a);
-	int med = stack_size(*a) / 2;
+	float med = stack_size(*a) / 2;
 	while ((*a)->rank > med)
 		ra(a);
 	pb(a, b);
