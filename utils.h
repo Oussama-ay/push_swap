@@ -29,7 +29,7 @@ typedef struct s_list
 	int				index;
 	int				instructions_cost;
 	int				above_median;
-	int				rank;
+	float				rank;
 	struct s_list	*target;
 	struct s_list	*next;
 }	t_list;
